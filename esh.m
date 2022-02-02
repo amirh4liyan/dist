@@ -1,10 +1,11 @@
 clc
 clear all
 close all
-msg = ('Enter M&V for uniform distribution, R for Riley distribution, E for exponential distribution,\nN for normal distribution, and M & V for normal distribution with mean and variance\n. (Note! Enter quotation marks in capital letters and inside the single ): ');
+msg = 'Enter M&V for uniform distribution, R for Riley distribution, E for exponential distribution,\nN for normal distribution, and M & V for normal distribution with mean and variance\n. (Note! Enter quotation marks in capital letters and inside the single ): ';
 
 N = 10000;
 a = input(msg);
+
 switch a
     case 'U' 
         x = rand(1,N);
@@ -51,6 +52,7 @@ switch a
         m = input('pdf or cdf?! ');
         h.Normalization = m;
         legend({'theoretical' ; 'Histogram'})
+        
     case 'E'
         x = rand(1,N);
         m = input('Enter the desired average: ');
@@ -89,6 +91,7 @@ switch a
         disp(['Variance: ' , num2str(var(x))]);
         disp(['Covariance: ' num2str(cov(x))]);
         
-    case default
+    default
         disp('fuls');
+        
 end
