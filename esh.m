@@ -91,7 +91,7 @@ switch a
         disp(['Variance: ' , num2str(var(x))]);
         disp(['Covariance: ' num2str(cov(x))]);
         
-    default
+    otherwise
         disp('fuls');
         
 end
