@@ -16,7 +16,7 @@ pd = makedist('Normal', 'mu', mu, 'sigma', sigma);
 
 fun = @(x) ((1) ./ sqrt(sigma.*2.*pi)) .* exp(((-1) ./ (2)) .* ((x - mu) ./sigma));
 
-0DFTHEORY = 
+PDFTHEORY = integral(fun, 0, 1);
 
 cdf_var = cdf(pd, X);
 pdf_var = pdf(pd, X);
@@ -33,6 +33,7 @@ average = mean(X);
 variance = var(X);
 correlation = variance + (average).^2;
 
+disp(['Theory  : ' num2str(PDFTHEORY)]);
 disp(['average  : ' num2str(average)]);
 disp(['variance : ' num2str(variance)]);
 disp(['correlation : ' num2str(correlation)]);
