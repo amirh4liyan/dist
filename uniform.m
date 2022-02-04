@@ -18,15 +18,19 @@ PDFSOFT = pdf(pd, X);
 YPDF(1:N) = PDFTHEORY;
 
 
-%CDFTHEORY_R1() = 0;
-%CDFTHEORY_R2() = (x - a) ./ (b - a);
-%CDFTHEORY_R2() = 1;
-
+CDFTHEORY_R1 = 0;
+CDFTHEORY_R2 = (X - a) ./ (b - a);
+CDFTHEORY_R3 = 1;
 CDFSOFT = cdf(pd, X);
+XX = [ 0 X 1 ];
 
 % draw cdf and pdf
 figure; plot(X, YPDF); xlabel('data'); ylabel('theoretical pdf'); title('Uniform Distribution');
 figure; plot(X, PDFSOFT); xlabel('data'); ylabel('software pdf'); title('Uniform Distribution');
+
+figure; plot(XX, [CDFTHEORY_R1 CDFTHEORY_R2 CDFTHEORY_R3]); xlabel('data'); ylabel('theoretical cdf'); title('Uniform Distribution');
+figure; plot(X, PDFSOFT); xlabel('data'); ylabel('software cdf'); title('Uniform Distribution');
+
 
 % histogram
 %figure;hist(X);
