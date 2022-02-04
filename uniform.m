@@ -11,14 +11,6 @@ N = 100000;
 X = rand(1, N);
 pd = makedist('Uniform');
 
-function pdf_var = pdf_theory(a, b)
-    pdf_var = (b-a) / 1;
-end
-
-function pdf_var = pdf_soft(X)
-    pdf_var = pdf(pd, X);
-end
-
 
 PDFTHEORY = pdf_theory(0, 1);
 PDFSOFT = pdf_soft(X);
@@ -40,3 +32,12 @@ correlation = variance + (average).^2;
 disp(['average  : ' num2str(average)]);
 disp(['variance : ' num2str(variance)]);
 disp(['correlation : ' num2str(correlation)]);
+
+
+function pdf_var = pdf_theory(a, b)
+    pdf_var = (b-a) / 1;
+end
+
+function pdf_var = pdf_soft(X)
+    pdf_var = pdf(pd, X);
+end 
