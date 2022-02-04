@@ -14,7 +14,7 @@ mu = 0;
 sigma = 1;
 pd = makedist('Normal', 'mu', mu, 'sigma', sigma);
 
-fun = @(x) ((1) ./ sqrt(sigma.*2.*pi)) .* exp(((-1) ./ (2)) .*.
+fun = @(x) ((1) ./ sqrt(sigma.*2.*pi)) .* exp(((-1) ./ (2)) .* ((x - mu) ./sigma));
 
 0DFTHEORY = 
 
