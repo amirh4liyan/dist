@@ -11,11 +11,11 @@ N = 100000;
 X = rand(1, N);
 pd = makedist('Uniform');
 
-fun pdf_var = pdf_theory(a, b)
+function pdf_var = pdf_theory(a, b)
     pdf_var = (b-a) / 1;
 end
 
-fun pdf_var = pdf_soft(X)
+function pdf_var = pdf_soft(X)
     pdf_var = pdf(pd, X);
 end
 
