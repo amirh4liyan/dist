@@ -14,6 +14,10 @@ mu = 0;
 sigma = 1;
 pd = makedist('Normal', 'mu', mu, 'sigma', sigma);
 
+fun = @(x) ((1) ./ sqrt(sigma.*2.*pi)) .* exp(((-1) ./ (2)) .*.
+
+0DFTHEORY = 
+
 cdf_var = cdf(pd, X);
 pdf_var = pdf(pd, X);
 
