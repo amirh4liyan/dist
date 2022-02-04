@@ -13,10 +13,11 @@ N = 100000;
 X = rand(1, N);
 pd = makedist('Uniform');
 
-PDFTHEORY = (b-a) / 1;
+PDFTHEORY = (b-a) ./ 1;
 PDFSOFT = pdf(pd, X);
 
-cdf_var = cdf(pd, X);
+
+CDFSOFT = cdf(pd, X);
 
 % draw cdf and pdf
 figure; plot(X, PDFTHEORY); xlabel('data'); ylabel('theoretical pdf'); title('Uniform Distribution');
@@ -28,7 +29,7 @@ figure; plot(X, PDFSOFT); xlabel('data'); ylabel('software pdf'); title('Uniform
 % avg, var and corr
 average = mean(X);
 variance = var(X);
-correlation = variance + (average).^2;
+correlation = variance + ((average).^2);
 
 disp(['average  : ' num2str(average)]);
 disp(['variance : ' num2str(variance)]);
