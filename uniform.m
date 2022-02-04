@@ -15,12 +15,13 @@ pd = makedist('Uniform');
 
 PDFTHEORY = (b-a) ./ 1;
 PDFSOFT = pdf(pd, X);
+YPDF(1, N) = PDFTHEORY;
 
 
 CDFSOFT = cdf(pd, X);
 
 % draw cdf and pdf
-figure; plot(X, PDFTHEORY); xlabel('data'); ylabel('theoretical pdf'); title('Uniform Distribution');
+figure; plot(X, YPDF); xlabel('data'); ylabel('theoretical pdf'); title('Uniform Distribution');
 figure; plot(X, PDFSOFT); xlabel('data'); ylabel('software pdf'); title('Uniform Distribution');
 
 % histogram
