@@ -18,6 +18,10 @@ PDFSOFT = pdf(pd, X);
 YPDF(1, N) = PDFTHEORY;
 
 
+%CDFTHEORY_R1() = 0;
+%CDFTHEORY_R2() = (x - a) ./ (b - a);
+%CDFTHEORY_R2() = 1;
+
 CDFSOFT = cdf(pd, X);
 
 % draw cdf and pdf
