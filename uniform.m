@@ -6,18 +6,28 @@
 clc
 clear all
 
-% define N and X
+% define N, X and dist object 
 N = 100000;
 X = rand(1, N);
-
 pd = makedist('Uniform');
 
+fun pdf_var = pdf_theory(a, b)
+    pdf_var = (b-a) / 1;
+end
+
+fun pdf_var = pdf_soft(X)
+    pdf_var = pdf(pd, X);
+end
+
+
+PDFTHEORY = pdf_theory(0, 1);
+PDFSOFT = pdf_soft(X);
+
 cdf_var = cdf(pd, X);
-pdf_var = pdf(pd, X);
 
 % draw cdf and pdf
-figure; plot(X, cdf_var); xlabel('data'); ylabel('cdf'); title('Uniform Distribution');
-figure; plot(X, pdf_var); xlabel('data'); ylabel('pdf'); title('Uniform Distribution');
+figure; plot(X, PDFTHEORY); xlabel('data'); ylabel('theoretical pdf'); title('Uniform Distribution');
+figure; plot(X, PDFSOFT); xlabel('data'); ylabel('software pdf'); title('Uniform Distribution');
 
 % histogram
 %figure;hist(X);
