@@ -15,7 +15,7 @@ pd = makedist('Uniform');
 
 PDFTHEORY = (b-a) ./ 1;
 PDFSOFT = pdf(pd, X);
-YPDF(1, N) = PDFTHEORY;
+YPDF(1:N) = PDFTHEORY;
 
 
 %CDFTHEORY_R1() = 0;
