@@ -14,6 +14,11 @@ mu = 0;
 sigma = 1;
 pd = makedist('Normal', 'mu', mu, 'sigma', sigma);
 
+% avg, var and corr
+average = mean(X);
+variance = var(X);
+correlation = variance + (average).^2;
+
 % compute pdf, cdf by theory
 range = -5:0.1:5;
 PDFTHEORY = average + variance .* (1 ./ sqrt(2.*pi)) .* exp((-1 ./ 2) .* (range.^2));
@@ -29,10 +34,6 @@ figure; plot(range, CDFTHEORY); xlabel('data'); ylabel('theoretical cdf'); title
 figure; plot(X, PDFSOFT); xlabel('data'); ylabel('software pdf'); title('Normal');
 figure; plot(X, CDFSOFT); xlabel('data'); ylabel('software cdf'); title('Normal');
 
-% avg, var and corr
-average = mean(X);
-variance = var(X);
-correlation = variance + (average).^2;
 
 disp(['average  : ' num2str(average)]);
 disp(['variance : ' num2str(variance)]);
