@@ -26,9 +26,6 @@ CDFSOFT = cdf(pd, X);
 figure; plot(X, PDFSOFT); xlabel('data'); ylabel('software pdf'); title('Normal');
 figure; plot(X, CDFSOFT); xlabel('data'); ylabel('software cdf'); title('Normal');
 
-% histogram
-%figure;hist(X);
-
 % avg, var and corr
 average = mean(X);
 variance = var(X);
