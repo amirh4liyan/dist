@@ -34,9 +34,6 @@ figure; plot(X, PDFSOFT); xlabel('data'); ylabel('software pdf'); title('Uniform
 figure; plot(X, CDFSOFT); xlabel('data'); ylabel('software cdf'); title('Uniform');
 
 
-% histogram
-%figure;hist(X);
-
 % avg, var and corr
 average = mean(X);
 variance = var(X);
