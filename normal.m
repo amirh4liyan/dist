@@ -9,7 +9,7 @@ clear all
 
 % define N, X and dist object
 N = 100000;
-X = randn(1, N);
+X = rand(1, N);
 mu = 0;
 sigma = 1;
 pd = makedist('Normal', 'mu', mu, 'sigma', sigma);
